@@ -3,7 +3,7 @@ class Application
   def call(env)
     resp = Rack::Response.new
     
-    if self.now < 12
+    if self.pluck(:now) < 12
       resp.write "Good Morning"
 
     else
